@@ -1,19 +1,39 @@
-USE OnlineStore;
+# Online Store Database
 
--- Query to get all customers
-SELECT * FROM Customers;
+This project demonstrates the creation of a simple relational database for an online store. The database includes tables for customers, products, orders, and order details, along with sample data and queries.
 
--- Query to get all products with their prices and stock quantity
-SELECT ProductName, Price, StockQuantity FROM Products;
+## Project Structure
 
--- Query to get all orders with customer information
-SELECT Orders.OrderID, Customers.FirstName, Customers.LastName, Orders.OrderDate, Orders.TotalAmount
-FROM Orders
-JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+- `schema.sql`: SQL script to create the database and tables.
+- `data.sql`: SQL script to insert sample data into the tables.
+- `queries.sql`: SQL script containing basic queries to interact with the database.
 
--- Query to get the details of a specific order
-SELECT Orders.OrderID, Products.ProductName, OrderDetails.Quantity, OrderDetails.Price
-FROM OrderDetails
-JOIN Orders ON OrderDetails.OrderID = Orders.OrderID
-JOIN Products ON OrderDetails.ProductID = Products.ProductID
-WHERE Orders.OrderID = 1;
+## How to Use
+
+1. Run the `schema.sql` script to create the database and tables.
+2. Run the `data.sql` script to populate the tables with sample data.
+3. Run the queries in `queries.sql` to interact with the database.
+
+## Database Schema
+
+- **Customers**: Stores customer information.
+- **Products**: Stores product information.
+- **Orders**: Stores order information.
+- **OrderDetails**: Stores details of each order, including product information and quantity.
+
+## Sample Queries
+
+The `queries.sql` file contains sample queries, including:
+- Retrieve all customers
+- Retrieve all products with their prices and stock quantity
+- Retrieve all orders with customer information
+- Retrieve details of a specific order
+
+## ER Diagram
+
+(Optional) Include an ER diagram to visualize the database structure.
+
+## License
+
+This project is open-source and available under the MIT License.
+
